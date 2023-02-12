@@ -1,0 +1,74 @@
+body{
+    overflow-x: hidden;
+    background-image: url('../../img/gradient-gray-abstract-background-blurred-smooth-gray-color-wallpape-free-vector.jpg');
+}
+
+.containerHome{
+    background-image: url('../../img/gradient-gray-abstract-background-blurred-smooth-gray-color-wallpape-free-vector.jpg');
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.containerFilters{
+    background-color: black;
+    height: 5.625rem;
+    
+}
+
+
+.containerFilters select{
+    align-items: center;
+    margin: auto;
+    position: relative;
+    bottom: 90px;
+    left: 25rem;
+    z-index: 100;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.menuBar:checked ~ .containerFilters{
+    transform: translateX(0)
+}
+
+.buttonHome{
+    width: 50px;
+    height: 3.125rem;
+    border-radius: 50%;
+    margin-right: 43.75rem;
+    position: relative;
+    top: 1.125rem;
+    right: 9.375rem;
+    cursor: pointer;
+    background-image: url('../../img/mundoHome.png');
+    z-index: 100;
+}
+
+.searchBar{
+    position: relative;
+    bottom: 7.3125rem;
+    left: 3.125rem;
+}
+
+.textHome{
+    color: white;
+    position: relative;
+    bottom: 2.75rem;
+    width: 10%;
+    left: 10.9375rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.buttonCreateActivity{
+    position: relative;
+    bottom: 5.625rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    z-index: 200;
+}
+

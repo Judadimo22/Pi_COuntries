@@ -1,0 +1,20 @@
+.flagDetail{
+    border-radius: 80%;
+    width:200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.nameCountry{
+   color: white;
+   font-family: cursive;
+   font-size: 1.1875rem;
+}
+
+.continentCountry{
+    color: white;
+    font-family: cursive;
+    padding-bottom: 1.875rem;
+}
+

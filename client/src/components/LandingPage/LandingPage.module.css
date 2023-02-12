@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.containerLanding{
+    margin: 0;
+    overflow-y: hidden;
+
+}
+
+.bannerLanding{
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.bannerLanding img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+
+}
+
+.bannerLanding h1{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    bottom: 51.25rem;
+    color: rgb(255, 255, 255);
+    width: 90%;
+    padding: 1.25rem 0;
+    font-size: 3.125rem;
+    font-family: fantasy
+}
+
+
+
+.containerLanding{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.buttonGoHome{
+    position: relative;
+    background-image: url('../../img/vecteezy_plane-flying-around-the-world-clipart-design-illustration_9384431_140\ \(1\).png');
+    bottom: 28.125rem;
+    right: 31.25rem;
+    height: 100px;
+    width: 6.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    border: 0;
+}
+
+.buttonGoHome:hover{
+    opacity: 70%;;
+}
+
+.textHome{
+    position: relative;
+    bottom: 37.8125rem;
+    right: 31.25rem ;
+    font-size: 1.125rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}

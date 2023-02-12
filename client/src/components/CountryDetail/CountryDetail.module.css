@@ -1,0 +1,78 @@
+.containerInfo{
+    display: grid;
+    grid-template-columns: 350px 350px;
+    grid-column-gap: 120px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border: 5px black solid;
+    width: 60%;
+    text-align: left;
+    background-color: white;
+    padding: 5rem;
+    position: relative;
+    bottom: 3.125rem;
+    padding-bottom: 25rem;
+}
+
+.containerFilters{
+    background-color: black;
+    height: 5.625rem;
+    
+}
+
+.buttonHome{
+    width: 50px;
+    height: 3.125rem;
+    border-radius: 50%;
+    margin-right: 43.75rem;
+    position: relative;
+    top: 1.125rem;
+    right: 9.875rem;
+    cursor: pointer;
+    background-image: url('../../img/mundoHome.png');
+}
+
+.textHome{
+    color: white;
+    position: relative;
+    bottom: 2.75rem;
+    width: 10%;
+    left: 10.9375rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+.dataCountry{
+    justify-content: center;
+    text-align: left;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    top: 1.25rem;
+}
+
+.dataCountry span{
+    color: rgb(52, 52, 52);
+}
+
+
+.containerFlag img{
+    position: relative;
+    border: .0063rem black solid;
+    width: 26.25rem;
+    height: 15.625rem;
+    top: 1.125rem;
+}
+
+.nameCountry{
+    width: 100%;
+    font-size: 2.1875rem;
+    font-family: fantasy;
+    position: relative;
+    top: 3.75rem;
+    z-index: 100;
+}
+

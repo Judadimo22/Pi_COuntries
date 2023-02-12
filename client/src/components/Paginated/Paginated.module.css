@@ -1,0 +1,18 @@
+.paging{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.paging li{
+    margin: 0 .3125rem;
+}
+
+.buttonPages{
+    background: none;
+    border: 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 2.5rem;
+}

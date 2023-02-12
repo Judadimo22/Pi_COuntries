@@ -1,0 +1,120 @@
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+.inputs select {
+    border-radius: 100px;
+    background: rgba(33, 32, 32, 0.9);
+    color: rgb(210, 100, 100);
+    text-shadow: 0px 1px white;
+    font-size: larger;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+}
+
+.inputs label {
+    border-radius: 100px;
+    background: rgba(33, 32, 32, 0.9);
+    color: rgb(210, 100, 100);
+    text-shadow: 0px 1px white;
+    font-size: larger;
+    margin: 5px;
+    padding: 5px;
+}
+
+.inputName {
+    border-radius: 100px;
+    background: rgba(33, 32, 32, 0.9);
+    color: rgb(210, 100, 100);
+    text-shadow: 0px 1px white;
+    font-size: larger;
+    padding: 5px;
+}
+
+.country {
+    margin-top: 50px;
+}
+
+.country label {
+    border-radius: 100px;
+    background: rgba(33, 32, 32, 0.9);
+    color: rgb(210, 100, 100);
+    text-shadow: 0px 1px white;
+    font-size: larger;
+    margin: 5px;
+    padding: 5px;
+}
+
+.country select {
+    border-radius: 100px;
+    background: rgba(33, 32, 32, 0.9);
+    color: rgb(210, 100, 100);
+    text-shadow: 0px 1px white;
+    font-size: larger;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+.area {
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(210, 100, 100);
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 5px;
+    overflow: scroll;   
+}
+
+.containerItems {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-column-gap: 15px;
+    padding: 10px;
+}
+
+.items {
+    padding: 5px;
+    margin: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.submit {
+    background-color: green;
+    color: black;
+    position: relative;
+    margin-top: 100px;
+    font-size: x-large;
+    font-weight: bold;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.submit:hover {
+    background-color: rgb(114, 222, 114);
+    cursor: pointer;
+}
+
+.close {
+    border-radius: 50px;
+    background: red;
+    color: black;
+}
+
+.close:hover {
+    background: rgb(237, 81, 81);
+    transform: scale(1.1);
+    cursor: pointer;
+    border: solid 2px rgb(98, 2, 2);
+    color: white
+}

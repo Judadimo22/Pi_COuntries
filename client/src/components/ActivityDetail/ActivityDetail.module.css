@@ -1,0 +1,42 @@
+.containerActivityDetail{
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    bottom: 25rem;
+}
+
+.containerActivityDetail ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    border: .125rem black solid;
+    margin-bottom: .625rem;
+    
+}
+
+.containerActivityDetail h3{
+    font-size: 1.5625rem;
+    font-family: fantasy;
+}
+
+.containerActivityDetail ul span{
+    padding: 0 .625rem;
+    color: rgb(52, 52, 52);
+}
+
+.containerActivityDetail ul li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: .625rem;
+    margin: 0 1.25rem;
+    text-align: center;
+}
+
+.listContainer{
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+}
