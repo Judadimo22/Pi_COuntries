@@ -7,8 +7,6 @@ export const FILTER_ACTIVITY = 'FILTER_ACTIVITY';
 export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';
 export const ORDER_COUNTRIES = 'ORDER_COUNTRIES';
 
-
-
 export const getCountries = () => {
     try {
         return async (dispatch) =>{
@@ -23,7 +21,6 @@ export const getCountries = () => {
         
     } catch (error) {
         console.log(error);
-        
     }
 };
 
@@ -38,9 +35,9 @@ export const getActivities = () => {
         }
         
     } catch (error) {
-        
+        console.log(error);
     }
-}
+};
 
 export const getCountryByName = (name) => {
     try {
@@ -53,7 +50,7 @@ export const getCountryByName = (name) => {
         }
         
     } catch (error) {
-        
+        console.log(error);
     }
 };
 
@@ -68,14 +65,20 @@ export const getCountryById = (id) => {
         }
         
     } catch (error) {
-        
+        console.log(error);
     }
 };
 
-export function postActivity(input) {
-    return async function () {       
-        return await axios.post('http://localhost:3001/activities', input);    
+export const createActivity = (input) => {
+    try {
+        return async () => {
+            let info = await axios.post('http://localhost:3001/activities', input);
+            return info;
+        }
+    } catch (error) {
+        console.log(error);
     }
+
 };
 
 export const filterActivity = (payload) => {
@@ -86,7 +89,7 @@ export const filterActivity = (payload) => {
         }
         
     } catch (error) {
-        
+        console.log(error);
     }
 };
 
@@ -98,7 +101,7 @@ export const filterByContinent = (payload) => {
         }
         
     } catch (error) {
-        
+        console.log(error);
     }
 }
 
@@ -111,6 +114,6 @@ export const orderCountries = (payload) => {
         }
         
     } catch (error) {
-        
+        console.log(error);
     }
-}
+};

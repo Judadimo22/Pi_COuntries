@@ -5,8 +5,8 @@ const getActivities = async (req,res,next) => {
     let activities = await Activity.findAll({
         include: Country
     });
-    try {
-      if(activities){
+
+    if(activities){
         activities = activities.map(activity => {
             return{
                 name: activity.name,
@@ -21,68 +21,72 @@ const getActivities = async (req,res,next) => {
                     }
                 }) : 'No country match'
             }
-        });
+        })
     };
     res.status(200).send(activities)
-    } catch (error) {
-      res.status(400).send(next(error))
-    }
 }
 
-const createActivity = async (req,res,next) => {
-  let {
+const createActivity = async(req, res) =>{
+  let{
     name,
     difficulty,
     duration,
     season,
     countries
   } = req.body;
-
+  
   try {
-    if(name && difficulty && duration && season && countries){
-      const validateActivity = await Activity.findOne({
-        where: {
-          name,
-          difficulty,
-          duration,
-          season
-        },
+  
+  if(name && difficulty && duration && season && countries){
+
+    name = name.charAt(0).toUpperCase()+name.slice(1).toLowerCase();
+    
+    const validateActivity = await Activity.findOne({
+      where:{
+        name,
+        difficulty,
+        duration,
+        season
+      }
+    });
+    
+    if(!validateActivity){
+      const addActivity = await Activity.create({
+        name,
+        difficulty,
+        duration,
+        season
       });
 
-      if(!validateActivity){
-        const addActivity = await Activity.create({
-          name,
-          difficulty,
-          duration,
-          season
-        });
-
-        const matchCountry = await Country.findAll({
-          where: {
-            name: countries
-          }
-        });
-
-        const results = await addActivity.addCountries(matchCountry);
-
-        res.status(200).send(results);
-      };
-
-      const countryMatch = await Country.findAll({
-        where: {
+      const matchCountry = await Country.findAll({
+        where:{
           name: countries
         }
       });
 
-      const results = await validateActivity.addCountries(countryMatch);
+      const results = await addActivity.addCountries(matchCountry);
 
-      res.status(200).send(results);
-    }
-  } catch (error) {
-    res.status(400).send(next(error))
+      return res.status(200).send(results);
+    };
+
+    const countryMatch = await Country.findAll({
+      where:{
+        name: countries
+      }
+    });
+
+    const results = await validateActivity.addCountries(countryMatch);
+
+    return res.status(200).send(results);
     
   }
-}
+  } catch (error) {
+      res.status(400).send('No info in Data Base');
+    }
+  };
+
+
+
 
 module.exports = {
     getActivities,

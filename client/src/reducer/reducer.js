@@ -10,7 +10,7 @@ import {
 
 let initialState = {
     allCountries: [],
-    backupCountries:[],
+    countries:[],
     activities: [],
     detail: [],
 };
@@ -21,7 +21,7 @@ const rootReducer = (state= initialState, action) => {
             return{
                 ...state,
                 allCountries: action.payload,
-                backupCountries: action.payload
+                countries: action.payload
             };
 
         case GET_COUNTRY_BY_NAME:
@@ -82,12 +82,12 @@ const rootReducer = (state= initialState, action) => {
 
                 return{
                     ...state,
-                    allCountries: state.backupCountries
+                    allCountries: state.countries
                 };
 
         case FILTER_ACTIVITY:
             let activity = state.activities;
-            let filter = activity.length && action.payload === 'All' ? state.backupCountries.filter(e => e.activities.length > 0) : state.backupCountries.filter(e => e.activities.find(el => el.name === action.payload));
+            let filter = activity.length && action.payload === 'All' ? state.countries.filter(e => e.activities.length > 0) : state.countries.filter(e => e.activities.find(el => el.name === action.payload));
             if(filter.length){
                 return{
                     ...state,
@@ -97,11 +97,11 @@ const rootReducer = (state= initialState, action) => {
 
             return{
                 ...state,
-                allCountries: state.backupCountries
+                allCountries: state.countries
             };
 
         case FILTER_BY_CONTINENT:
-            let continents = state.backupCountries;
+            let continents = state.countries;
             continents =  continents && action.payload === 'All' ? continents : continents.filter(e => e.continent === action.payload);
 
     

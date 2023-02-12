@@ -1,7 +1,7 @@
 const {Country, Activity} = require('../db')
 const axios = require('axios');
 
-const addCountriesToDb = async (next) => {
+const addCountriesToDb = async () => {
     try {
         const infoDb = await Country.findAll({
             include: Activity
@@ -16,7 +16,7 @@ const addCountriesToDb = async (next) => {
                 id: country.cca3,
                 flag: country.flags[1] ? country.flags[1] : 'Empty flag',
                 continent: country.continents.toString(),
-                capital: country.capital ? String(country.capital) : 'No capital found',
+                capital: country.capital ? String(country.capital[0]) : 'No capital found',
                 subregion: country.subregion ? country.subregion : 'No subregion found',
                 area: country.area,
                 population: country.population,
@@ -47,31 +47,32 @@ const addCountriesToDb = async (next) => {
         });
         return countries; 
     } catch (error) {
-        res.status(400).send(next(error))
+        return res.status(400).send('No found data in the database')
     }
-};
 
-const getCountryByName = async (req,res,next) => {
+}
+
+const getCountryByName = async (req,res) => {
     let allCountries = await addCountriesToDb();
 
     const {name} = req.query;
-
+    
     try {
         if(name){
             let countryName = allCountries.filter(country => country.name.toLowerCase().startsWith(name.toLowerCase()));
             if(countryName) res.status(200).send(countryName);
-            res.status(400).send({message: `No data for country: ${name}`});
     
         }else{
             res.status(200).send(allCountries)
         }
     } catch (error) {
-        res.status(400).send(next(error))
-    };
-};
+        return res.status(400).send(error, 'No country found by name')
+    }
+
+}
 
 
-const getCountryById = async (req,res,next) => {
+const getCountryById = async (req,res) => {
     let {id} = req.params;
     id = id.toUpperCase();
 
@@ -103,10 +104,9 @@ const getCountryById = async (req,res,next) => {
             };
     
             if(countryMatchId) res.status(200).send(countryMatchId);
-            res.status(400).send({message: 'Nor founud data'});
         };
     } catch (error) {
-        res.status(400).send(next(error))
+        res.status(400).send('No country found by ID')
     }
     
 };

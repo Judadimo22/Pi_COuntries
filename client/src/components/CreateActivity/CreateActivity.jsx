@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, postActivity } from "../../actions/actions";
+import { getCountries, createActivity } from "../../actions/actions";
 import Style from './CreateActivity.module.css';
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const validateForm = (input) => {
 export default function CreateActivity() {
 
     const dispatch = useDispatch();
-    const allCountries = useSelector((state)=> state.backupCountries).sort((a, b) => {
+    const allCountries = useSelector((state)=> state.countries).sort((a, b) => {
       if(a.name < b.name){
           return -1;
       }
@@ -83,7 +83,7 @@ export default function CreateActivity() {
     function handleSubmit(e){
       e.preventDefault();
       if(input.countries.length>0 && input.name && input.difficulty && input.duration && input.season){
-        dispatch(postActivity(input));
+        dispatch(createActivity(input));
         alert("Activity created");
         setInput({
             name: '',
