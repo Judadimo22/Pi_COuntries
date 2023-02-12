@@ -107,7 +107,6 @@ export default function CreateActivity() {
 
 
     const difficulty = [1, 2, 3, 4, 5];
-    const duration = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
     const season = ['Winter', 'Spring', 'Autumn', 'Summer'];
     return(
         <div>
@@ -154,16 +153,9 @@ export default function CreateActivity() {
 
                     <div>
                         <label>Duration</label>
-                        <select name="duration" required onChange={(e) => handleInputChange(e)}>
-                            <option value="">Select duration</option>
-                            {
-                                duration.map(n => (
-                                    <option value={n} key={n}>{n}hs</option>
-                                ))
-                            }
-                        </select>
+                        <input className={Style.inputDuration} type="text" name="duration" value={input.duration} onChange={(e) => handleInputChange(e)} placeholder='Duration'></input>
                         <div className={Style.error}>
-                            {error.duration && <span>{error.duration}</span>} 
+                            {error.name && <span>{error.duration}</span>}
                         </div>
                     </div>
 
