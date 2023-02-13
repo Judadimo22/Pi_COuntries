@@ -1,11 +1,11 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import { getCountryById } from "../../actions/actions";
 import Style from './CountryDetail.module.css';
-import { getActivities, getCountries, orderCountries, filterActivity, filterByContinent } from "../../actions/actions";
-import SearchBar from "../SearchBar/SearchBar"
+import { getCountries } from "../../actions/actions";
 import ActivityDetail from "../ActivityDetail/ActivityDetail";
+import NavBar from "../NavBar/NavBar";
 
 const CountryDetail = () => {
     const details = useSelector((state) => state.detail);
@@ -13,12 +13,8 @@ const CountryDetail = () => {
     const{id} = useParams();
 
 
-
-
-
     useEffect(() => {
         dispatch(getCountries());
-        dispatch(getActivities());
     }, [dispatch]);
 
 
@@ -28,22 +24,9 @@ const CountryDetail = () => {
 
     return(
         <div>
-             <div className={Style.containerHome}>
             <div>
-                <div className={Style.containerFilters}>
-                    <Link to={'/home'}>
-                    <button className={Style.buttonHome}></button>
-                    <h5 className={Style.textHome}>Home</h5>
-                    </Link>
-
-                </div>
-
-
-
+                <NavBar/>
             </div>
-
-
-        </div>
         <h3 className={Style.nameCountry}>{details.name}</h3>
             <div className={Style.containerInfo}>
             <div className={Style.containerFlag}>
@@ -67,12 +50,6 @@ const CountryDetail = () => {
                 <ActivityDetail activityDetails={details.activities} country={details.name}/>
 
             </div>
-
-
-
-
-
-
 
         </div>
     )

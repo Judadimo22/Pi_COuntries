@@ -7,6 +7,7 @@ export const FILTER_ACTIVITY = 'FILTER_ACTIVITY';
 export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';
 export const ORDER_COUNTRIES = 'ORDER_COUNTRIES';
 
+
 export const getCountries = () => {
     try {
         return async (dispatch) =>{
@@ -73,6 +74,18 @@ export const createActivity = (input) => {
     try {
         return async () => {
             let info = await axios.post('http://localhost:3001/activities', input);
+            return info;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+};
+
+export const deleteActivity = (idActivity) => {
+    try {
+        return async () => {
+            let info = await axios.post(`http://localhost:3001/activities/delete/${idActivity}`);
             return info;
         }
     } catch (error) {

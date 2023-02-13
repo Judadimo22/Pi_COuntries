@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries, createActivity } from "../../actions/actions";
 import Style from './CreateActivity.module.css';
-import { Link } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 const validateForm = (input) => {
     const error = {};
@@ -110,22 +110,9 @@ export default function CreateActivity() {
     const season = ['Winter', 'Spring', 'Autumn', 'Summer'];
     return(
         <div>
-            <div className={Style.containerHome}>
             <div>
-                <div className={Style.containerFilters}>
-                    <Link to={'/home'}>
-                    <button className={Style.buttonHome}></button>
-                    <h5 className={Style.textHome}>Home</h5>
-                    </Link>
-
-                </div>
-
-
-
+                <NavBar/>
             </div>
-
-
-        </div>
             <form onSubmit={(e) => handleSubmit(e)} className={Style.form}>
                 <div className={Style.inputs}>
                     <div>

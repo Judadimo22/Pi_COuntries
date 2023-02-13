@@ -1,0 +1,79 @@
+.containerFilters{
+    background-color: black;
+    height: 5.625rem;
+    
+}
+
+
+.containerFilters select{
+    align-items: center;
+    margin: auto;
+    position: relative;
+    bottom: 90px;
+    left: 25rem;
+    z-index: 100;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+.buttonHome{
+    width: 50px;
+    height: 3.125rem;
+    border-radius: 50%;
+    margin-right: 43.75rem;
+    position: relative;
+    top: 1.125rem;
+    right: 13.75rem;
+    cursor: pointer;
+    background-image: url('../../img/mundoHome.png');
+    z-index: 100;
+}
+
+.searchBar{
+    position: relative;
+    bottom: 8.75rem;
+    right: 18.75rem;
+}
+
+.textHome{
+    color: white;
+    position: relative;
+    bottom: 2.75rem;
+    width: 10%;
+    left: 6.25rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    z-index: 200;
+}
+
+.buttonCreateActivity{
+    position: relative;
+    bottom: 5.75rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    z-index: 200;
+}
+
+.buttonListActivities{
+    position: relative;
+    bottom: 5.75rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    z-index: 200;
+}
+
+.containerSelect{
+    position: relative;
+    bottom: 1.5625rem;
+}
+
+.restore{
+    position: relative;
+    bottom: 5.625rem;
+    left: 25.4375rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    z-index: 200;
+}

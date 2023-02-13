@@ -85,10 +85,30 @@ const createActivity = async(req, res) =>{
     }
   };
 
+  const deleteActivity = async (req,res) => {
+    const {id} = req.params;
+    try {
+      if(id){
+        await Activity.destroy({
+          where:{
+            id: `${id}`
+          }
+        })
+
+        return res.status(200).send({message: 'Activity deleted'})
+      };
+
+      return res.status(400).send({message:'An error has ocurred'});
+    } catch (error) {
+      res.status(400).send('No found ID for delete')
+    }
+  };
+
 
 
 
 module.exports = {
     getActivities,
-    createActivity
+    createActivity,
+    deleteActivity,
 }
