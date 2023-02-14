@@ -19,22 +19,23 @@ const ListActivities = () => {
     };
 
     return(
-        <div className={Style.containerActivityDetail}>
+        <div className={Style.containerListActivities}>
             <div>
                 <NavBar/>
             </div>
         {
            activities?.map(a => (
-            <div className={Style.listContainer}>
+     <div className={Style.listContainer}>
+        <h3 className={Style.title}>List of activities</h3>
         <ul key={a.id}>
             <li>Name:<span>{a.name}</span></li>
             <li>Difficulty:<span>{a.difficulty}</span></li>
             <li>Duration:<span>{a.duration}</span></li>
             <li>Season:<span>{a.season}</span></li>
             <li>Country: {a.countries.map(e => {
-                return e.name
+                return <span>{e.name}</span>
             })}</li>
-            <li><button className='close' onClick={()=>handleDeleteActivity(a.id)}>X</button></li>
+            <li><button className='close' onClick={()=>handleDeleteActivity(a.id)}>Delete</button></li>
         </ul>
             </div>
 

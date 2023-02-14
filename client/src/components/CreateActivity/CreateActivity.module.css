@@ -1,1 +1,65 @@
+.inputs{
+    background-color: white;
+    width: 40%;
+    justify-content: center;
+    margin: auto;
+    margin-top: .625rem;
+    padding: .625rem 0;
+    border: 2px black solid;
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
 
+
+.containerOptions{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.inputs input{
+    width: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 1.25rem;
+    margin: auto;
+
+}
+
+.inputs select{
+    width: 52%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 1.25rem;
+    margin: auto;
+    justify-content: center;
+
+}
+
+.inputs label{
+    width: 50%;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: .125rem;
+
+}
+
+.titleCreate{
+    font-size: 1.875rem;
+    color: white;
+}
+
+.containerButton{
+    width: 40%;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+    border: .125rem black solid;
+    border-top: none;
+    padding: 1.25rem 0;
+    margin-bottom: 1.25rem;
+}

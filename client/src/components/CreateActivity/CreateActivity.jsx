@@ -114,16 +114,18 @@ export default function CreateActivity() {
                 <NavBar/>
             </div>
             <form onSubmit={(e) => handleSubmit(e)} className={Style.form}>
+                <h3 className={Style.titleCreate}>Create an activity</h3>
                 <div className={Style.inputs}>
-                    <div>
+                    <div className={Style.containerOptions}>
                         <label>Name</label>
                         <input className={Style.inputName} type="text" name="name" value={input.name} onChange={(e) => handleInputChange(e)} placeholder='Activity'></input>
-                        <div className={Style.error}>
-                            {error.name && <span>{error.name}</span>}
-                        </div>
                     </div>
 
-                    <div>
+                    <div className={Style.error}>
+                            {error.name && <span>{error.name}</span>}
+                        </div>
+
+                    <div className={Style.containerOptions}>
                         <label>Difficulty</label>
                         <select name="difficulty" required onChange={(e) => handleInputChange(e)}>
                             <option value="">Select difficulty</option>
@@ -133,20 +135,22 @@ export default function CreateActivity() {
                                 ))
                             }
                         </select>
-                        <div className={Style.error}>
+                    </div>
+
+                    <div className={Style.error}>
                             {error.difficulty && <span>{error.difficulty}</span>}
                         </div>
-                    </div>
 
-                    <div>
+                    <div className={Style.containerOptions}>
                         <label>Duration</label>
                         <input className={Style.inputDuration} type="text" name="duration" value={input.duration} onChange={(e) => handleInputChange(e)} placeholder='Duration'></input>
-                        <div className={Style.error}>
-                            {error.name && <span>{error.duration}</span>}
-                        </div>
                     </div>
 
-                    <div>
+                    <div className={Style.error}>
+                            {error.name && <span>{error.duration}</span>}
+                        </div>
+
+                    <div className={Style.containerOptions}>
                         <label>Season</label>
                         <select name="season" required onChange={(e) => handleInputChange(e)}>
                             <option value="">Select season</option>
@@ -156,26 +160,27 @@ export default function CreateActivity() {
                                 ))
                             }
                         </select>
-                        <div className={Style.error}>
+                    </div>
+
+                    <div className={Style.error}>
                             {error.season && <span>{error.season}</span>}
                         </div>
-                    </div>
-                </div>
 
-                <div className={Style.country}>
-                    <label>Country</label>
-                    <select name="countries" required onChange={(e) => handleSelectCountry(e)}>
-                        <option value="" hidden>Select Country</option>
-                        {
-                            allCountries.map(country => (
-                                <option value={country.name} key={country.id}>{country.name}</option>
+                    <div className={Style.containerOptions}>
+                        <label >Country</label>
+                        <select name="countries" required onChange={(e) => handleSelectCountry(e)}>
+                            <option value="" hidden>Select Country</option>
+                            {
+                                allCountries.map(country => (
+                                      <option value={country.name} key={country.id}>{country.name}</option>
                             ))
                         }
-                    </select>
-                    <div className={Style.error}>
+                       </select>
+                   </div>
+
+                   <div className={Style.error}>
                         {error.countries && <span>{error.countries}</span>}
                     </div>
-                </div>
 
                 <section className={Style.area}>
                     <div className={Style.containerItems}>
@@ -190,11 +195,14 @@ export default function CreateActivity() {
                     </div>
                 </section>
 
-                <div>
-                    <button className={Style.submit} type="submit">Create Activity</button>
                 </div>
+                                
+                <div className={Style.containerButton}>
+                    <button className={Style.submit} type="submit">Create Activity</button>
+                   </div>
             </form>
-        </div>
+
+            </div>
     )
 }
 
