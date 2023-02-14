@@ -11,7 +11,7 @@ const ActivityDetail = ({activityDetails, country}) => {
             <ul key={a.id}>
                 <li>Name:<span>{a.name}</span></li>
                 <li>Difficulty:<span>{a.difficulty}</span></li>
-                <li>Duration:<span>{a.duration}</span></li>
+                <li>Duration:<span>{a.duration} hs</span></li>
                 <li>Season:<span>{a.season}</span></li>
             </ul>
                 </div>

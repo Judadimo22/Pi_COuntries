@@ -9,7 +9,7 @@ const Paginated = ({allCountries, countriesPage, paginatedNum, currentPage}) => 
     };
 
     return(
-        <nav>
+        <nav className={Style.containerPaging}>
             <ul className={Style.paging}>
                 {
                     pagesNumber?.map(num => (
@@ -21,7 +21,7 @@ const Paginated = ({allCountries, countriesPage, paginatedNum, currentPage}) => 
                 }
 
             </ul>
-            <span></span>
+            <span className={Style.currentPage}>{currentPage}</span>
         </nav>
     )
 }

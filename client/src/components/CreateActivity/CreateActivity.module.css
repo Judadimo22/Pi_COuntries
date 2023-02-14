@@ -63,3 +63,22 @@
     padding: 1.25rem 0;
     margin-bottom: 1.25rem;
 }
+
+.error{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    font-size: .9375rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+}
+
+.close{
+    color: red;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}

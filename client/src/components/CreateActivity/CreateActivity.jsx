@@ -7,6 +7,7 @@ import NavBar from "../NavBar/NavBar";
 const validateForm = (input) => {
     const error = {};
     if(!input.name.length) error.name = <h3>Name is required</h3>;
+    if(input.name.length < 3) error.nameLength = <h3>Name must have at least 3 characters</h3>
     if(!input.difficulty.length) error.difficulty = <h3>Difficulty is required</h3>;
     if(!input.duration.length) error.duration = <h3>Duration is required</h3>;
     if(!input.season.length) error.season = <h3>Season is required</h3>;
@@ -125,6 +126,11 @@ export default function CreateActivity() {
                             {error.name && <span>{error.name}</span>}
                         </div>
 
+                    
+                    <div className={Style.error}>
+                            {error.nameLength && <span>{error.nameLength}</span>}
+                    </div>
+
                     <div className={Style.containerOptions}>
                         <label>Difficulty</label>
                         <select name="difficulty" required onChange={(e) => handleInputChange(e)}>
@@ -142,12 +148,12 @@ export default function CreateActivity() {
                         </div>
 
                     <div className={Style.containerOptions}>
-                        <label>Duration</label>
-                        <input className={Style.inputDuration} type="text" name="duration" value={input.duration} onChange={(e) => handleInputChange(e)} placeholder='Duration'></input>
+                        <label>Duration in hours</label>
+                        <input className={Style.inputDuration} type="text" name="duration" value={input.duration}  onChange={(e) => handleInputChange(e)} placeholder='Duration'></input>
                     </div>
 
                     <div className={Style.error}>
-                            {error.name && <span>{error.duration}</span>}
+                            {error.duration && <span>{error.duration}</span>}
                         </div>
 
                     <div className={Style.containerOptions}>

@@ -16,3 +16,14 @@
     color: white;
     margin-bottom: 2.5rem;
 }
+
+.currentPage{
+    background-color: white;
+    padding: .375rem .625rem;
+    border-radius: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
+.containerPaging{
+    margin-bottom: 2.5rem;
+}
