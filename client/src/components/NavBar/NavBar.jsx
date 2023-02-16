@@ -71,7 +71,8 @@ const NavBar = () => {
 
                     <div className={Style.containerSelect}>
                     <select className={Style.filter} onChange={e => handleFilterActivity(e)}>
-                        <option value="All">Filter by activities </option>
+                        <option value="">Filter by activities </option>
+                        <option value="All">With activities</option>
                         {
                             allActivities?.map(activity => {
                                 return <option key={allActivities.indexOf(activity)} value={activity.name}>{activity.name}</option>

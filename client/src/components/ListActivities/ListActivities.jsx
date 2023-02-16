@@ -36,7 +36,7 @@ const ListActivities = () => {
                 if (a.countries.length > 1) return <span>{e.name},</span>
                 return <span>{e.name}</span>
             })}</li>
-            <li><button className='close' onClick={()=>handleDeleteActivity(a.id)}>Delete</button></li>
+            <li><button className='close' onClick={(e)=>handleDeleteActivity(a.id)}>Delete</button></li>
         </ul>
             </div>
 

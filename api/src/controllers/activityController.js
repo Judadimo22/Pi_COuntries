@@ -1,7 +1,7 @@
 
 const {Country, Activity} = require('../db')
 
-const getActivities = async (req,res,next) => {
+const getActivities = async (req,res) => {
     let activities = await Activity.findAll({
         include: Country
     });
@@ -37,10 +37,7 @@ const createActivity = async(req, res) =>{
   
   try {
   
-  if(name && difficulty && duration && season && countries){
-
-    name = name.charAt(0).toUpperCase()+name.slice(1).toLowerCase();
-    
+  if(name && difficulty && duration && season && countries){    
     const validateActivity = await Activity.findOne({
       where:{
         name,

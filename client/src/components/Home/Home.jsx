@@ -10,9 +10,9 @@ const Home = () => {
     const dispatch = useDispatch();
     const allCountries = useSelector((state) => state.allCountries);
     const [currentPage, setCurrentPage] = useState(1);
-    const [countriesPage, setCountriesPage] = useState(9);
-    const lastCountry = currentPage === 1 ? currentPage * countriesPage : currentPage * countriesPage -1;
-    const firstCountry = lastCountry - countriesPage;
+    const [countriesPerPage, setCountriesPage] = useState(9);
+    const lastCountry = currentPage === 1 ? currentPage * countriesPerPage : currentPage * countriesPerPage -1;
+    const firstCountry = lastCountry - countriesPerPage;
     const currentCountries = allCountries.slice(firstCountry, lastCountry);
 
     const paginatedNum = (pageNum) => {
@@ -38,7 +38,7 @@ const Home = () => {
                 <div>
                 <Paginated 
                    allCountries={allCountries}
-                   countriesPage={countriesPage}
+                   countriesPerPage={countriesPerPage}
                    paginatedNum={paginatedNum}
                    currentPage={currentPage}
                 />

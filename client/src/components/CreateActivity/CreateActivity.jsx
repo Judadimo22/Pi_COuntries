@@ -21,12 +21,8 @@ export default function CreateActivity() {
 
     const dispatch = useDispatch();
     const allCountries = useSelector((state)=> state.countries).sort((a, b) => {
-      if(a.name < b.name){
-          return -1;
-      }
-      if(a.name > b.name){
-          return 1;
-      }
+      if(a.name < b.name) return -1;
+      if(a.name > b.name) return 1;
       return 0;
   });
 

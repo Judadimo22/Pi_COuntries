@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import  Style  from './LandingPage.module.css';
 import imagenBanner from '../../img/297005.jpg'
-import NavBar from '../NavBar/NavBar';
+
 
 const LandingPage = () => {
     return(

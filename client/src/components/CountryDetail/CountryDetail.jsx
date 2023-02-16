@@ -48,7 +48,6 @@ const CountryDetail = () => {
 
             <div className={Style.containerActivityDetail}>
                 <ActivityDetail activityDetails={details.activities} country={details.name}/>
-
             </div>
 
         </div>
