@@ -6,6 +6,7 @@ export const GET_COUNTRY_BY_ID = 'GET_COUNTRY_BY_ID';
 export const FILTER_ACTIVITY = 'FILTER_ACTIVITY';
 export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';
 export const ORDER_COUNTRIES = 'ORDER_COUNTRIES';
+export const FILTER_BY_POPULATION = 'FILTER_BY_POPULATION;'
 
 
 export const getCountries = () => {
@@ -105,6 +106,18 @@ export const filterActivity = (payload) => {
         console.log(error);
     }
 };
+
+export const filterByPopulation = (payload) => {
+    try {
+        return{
+            type: FILTER_BY_POPULATION,
+            payload
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 
 export const filterByContinent = (payload) => {
     try {

@@ -24,6 +24,8 @@ const Home = () => {
         dispatch(getCountries());
     }, [dispatch]);
 
+
+
     return(
         <div className={Style.containerHome}>
             <div>
@@ -43,6 +45,7 @@ const Home = () => {
                    currentPage={currentPage}
                 />
                 </div>
+
 
             </div>
 

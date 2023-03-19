@@ -5,7 +5,8 @@ import {
      GET_COUNTRY_BY_ID,
      FILTER_ACTIVITY,
      FILTER_BY_CONTINENT,
-     ORDER_COUNTRIES 
+     ORDER_COUNTRIES, 
+     FILTER_BY_POPULATION
 } from '../actions/actions'
 
 let initialState = {
@@ -80,10 +81,20 @@ const rootReducer = (state= initialState, action) => {
                 }
             };
 
+            if(action.payload === 'Max Area'){
+                return{
+                    ...state,
+                    allCountries: [...state.allCountries].sort((prev, next) => next.area - prev.area )
+                }
+            }
+
+
+
                 return{
                     ...state,
                     allCountries: state.countries
                 };
+
 
         case FILTER_ACTIVITY:
             let activity = state.activities;

@@ -49,6 +49,7 @@ const NavBar = () => {
         setCurrentPage(1)
     };
 
+
     return(
         <div className={Style.containerHome}>
             <div>
@@ -98,9 +99,11 @@ const NavBar = () => {
                         <option value="Z-A">Order Z-A</option>
                         <option value="Max Population">Order Max Population</option>
                         <option value="Min Population">Order Min population</option>
+                        <option value="Max Area">Order Max Area</option>
                     </select>
 
                     <button className={Style.restore} onClick={()=>onClickRestore()}>Restore</button>
+
 
                     </div>
 

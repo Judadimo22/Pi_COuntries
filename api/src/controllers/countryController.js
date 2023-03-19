@@ -1,7 +1,7 @@
 const {Country, Activity} = require('../db')
 const axios = require('axios');
 
-const addCountriesToDb = async () => {
+const addCountriesToDb = async (req, res) => {
     try {
         const infoDb = await Country.findAll({
             include: Activity
